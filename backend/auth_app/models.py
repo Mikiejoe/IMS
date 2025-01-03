@@ -5,6 +5,13 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 
+ROLES = [
+    ("admin", "Admin"),
+    ("staff", "Staff"),
+    ("accountant", "Accountant"),
+]
+
+
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
